@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <v-row
-        class="mb-6"
+        class="mb-6 mt-12 pt-6"
         no-gutters
     >
       <v-col class="col-md-4 offset-md-4">
