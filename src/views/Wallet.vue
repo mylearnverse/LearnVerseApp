@@ -52,8 +52,8 @@ export default {
         wallet.requestSignIn(
             "learnverse.testnet", // contract requesting access
             "LearnVerse", // optional
-            "http://learverse.spaces/success", // optional
-            "http://learverse.spaces/failure" // optional
+            "https://mylearnverse.com/signin/", // optional
+            "https://learnverse.space/#/wallet" // optional
         );
         console.log(wallet)
       };
