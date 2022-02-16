@@ -30,7 +30,7 @@ export default {
 
   methods: {
     async connectWallet() {
-      console.log('connect')
+      console.log('start connect wallet')
       const {connect, keyStores, WalletConnection} = nearAPI;
 
       const config = {
@@ -55,10 +55,8 @@ export default {
             "https://mylearnverse.com/signin/", // optional
             "https://learnverse.space/#/wallet" // optional
         );
-        console.log(wallet)
       };
       signIn()
-
     },
   },
 };
