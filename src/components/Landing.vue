@@ -14,19 +14,27 @@
               education.
             </h4>
             <p>
-              We're developing innovative Learn-to-Earn business models to
+              We're developing innovative <strong>Learn-to-Earn</strong> business models to
               incentivize both educators & students to improve student outcomes.
             </p>
 
             <v-btn
               class="mb-2 mt-2"
               color="accent"
-              :loading="loading"
-              @click="redirect"
+              :loading="sloading"
+              @click="sredirect"
             >
-              Enter
+              Students
             </v-btn>
-            <p v-if="loading">
+             <v-btn
+              class="mb-2 mt-2 ml-2"
+              color="accent"
+              :loading="eloading"
+              @click="eredirect"
+            >
+              Educators
+            </v-btn>
+            <p v-if="sloading|| eloading">
               One moment... preparing your LearnVerse instance.
             </p>
           </v-card-text>
@@ -42,12 +50,17 @@ export default {
 
   data: () => ({
     connected: false,
-    loading: false,
+    sloading: false,
+    eloading: false,
     logo: require("@/assets/logo-square.png"),
   }),
   methods: {
-    redirect() {
-      this.loading = true;
+     sredirect() {
+      this.sloading = true;
+      window.location.href = "https://mylearnverse.com/link";
+    },
+    eredirect() {
+      this.eloading = true;
       window.location.href = "https://mylearnverse.com";
     },
   },

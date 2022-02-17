@@ -1,11 +1,13 @@
 <template>
   <div>
+    <div class="bg">
+    </div>
     <canvas id="canvas"></canvas>
     <video-background
-      :src="video"
-      :poster="poster"
-      style="max-height: 840px; height: 100vh"
-      class="pt-6"
+        :src="video"
+        :poster="poster"
+        style="max-height: 840px; height: 100vh"
+        class="pt-6"
     >
       <div id="clouds">
         <div class="cloud x1">
@@ -24,7 +26,8 @@
           <v-img src="/cloud1.png"></v-img>
         </div>
       </div>
-      <landing />
+      <landing/>
+
     </video-background>
 
     <v-footer color="accent" padless class="lvfooter">
@@ -176,6 +179,7 @@ body,
 
 .welcome-card {
   z-index: 2;
+
 }
 
 canvas#canvas {
@@ -204,6 +208,18 @@ span.copyright {
   right: 17px;
   color: #fff;
   font-size: 12px;
+}
+
+.bg {
+  opacity: 0.7;
+  height: 100%;
+  background: url(/cloud-left.png) 0 0 no-repeat fixed, url(/cloud-right.png) 0 0 no-repeat fixed;
+  background-size: 500px 900px, 370px 907px;
+  background-position: 0 0, 100% 0;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+
 }
 
 #clouds {

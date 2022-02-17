@@ -8,7 +8,6 @@
             <h3 class="text-center">Connect NEAR Wallet</h3>
             <v-btn
               class="mb-2 mt-2"
-              outlined
               color="accent"
               @click="connectWallet({ requestSignIn: true })"
               >Connect
