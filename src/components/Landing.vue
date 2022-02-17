@@ -1,19 +1,25 @@
 <template>
-  <v-container>
-    <v-row
-        class="mb-6 mt-12 pt-6"
-        no-gutters
-    >
-      <v-col class="col-md-4 offset-md-4">
+  <v-container fill-height>
+    <v-row align="center">
+      <v-col class="mx-auto"
+             style="max-width: 400px;"
+      >
         <v-card>
           <v-card-text>
-            <v-img class="mx-12 my-4" :src="logo"></v-img>
-            <h4 class="text-center mb-2">Welcome to LearnVerse is a metaverse designed specifically for education.</h4>
-            <p>We're developing innovative Learn-to-Earn business models to incentivize both educators & students to improve academic outcomes.</p>
+            <v-img class="mx-12 my-4 mx-auto" :src="logo"
+                   style="max-width: 210px;"
+            ></v-img>
+            <h4 class="text-center mb-2">Welcome to LearnVerse a metaverse designed specifically for education.</h4>
+            <p>We're developing innovative Learn-to-Earn business models to incentivize both educators & students to
+              improve academic outcomes.</p>
 
 
-            <a class="mb-2 mt-2 v-btn v-btn--outlined theme--light v-size--default accent--text"
-               href="https://mylearnverse.com">Enter</a>
+            <v-btn class="mb-2 mt-2" color="accent"
+                   :loading="loading"
+                   @click="redirect">
+              Enter
+            </v-btn>
+            <p v-if="loading">One moment... preparing your LearnVerse instance.</p>
           </v-card-text>
         </v-card>
       </v-col>
@@ -27,7 +33,14 @@ export default {
 
   data: () => ({
     connected: false,
+    loading: false,
     logo: require('@/assets/logo-square.png')
   }),
+  methods: {
+    redirect() {
+      this.loading = true
+      window.location.href = "https://mylearnverse.com"
+    },
+  },
 };
 </script>

@@ -1,10 +1,16 @@
-// src/plugins/vuetify.js
-import Vue from 'vue'
-import Vuetify from 'vuetify'
-import 'vuetify/dist/vuetify.min.css'
+import Vue from "vue";
+import Vuetify from "vuetify/lib/framework";
 
-Vue.use(Vuetify)
+Vue.use(Vuetify);
 
-const opts = {}
+const vuetify = new Vuetify({
+  theme: {
+    themes: {
+      light: {
+        accent: '#337ab7',
+      },
+    },
+  },
+})
 
-export default new Vuetify(opts)
+export default vuetify
