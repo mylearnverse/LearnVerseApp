@@ -63,6 +63,7 @@ export default {
       // create wallet connection
       this.wallet = new WalletConnection(near);
       console.log('check wallet')
+      console.log(this.wallet.isSignedIn())
       if (this.wallet.isSignedIn()) {
         this.connected = true
         console.log('connected')
@@ -74,7 +75,7 @@ export default {
         this.wallet.requestSignIn(
             "learnverse.testnet", // contract requesting access
             "LearnVerse", // optional
-            "https://mylearnverse.com/signin/", // optional
+            "https://learnverse.space/#/wallet", // optional
             "https://learnverse.space/#/wallet" // optional
         );
       };
