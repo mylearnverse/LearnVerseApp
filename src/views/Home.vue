@@ -26,7 +26,8 @@
           <v-img src="/cloud1.png"></v-img>
         </div>
       </div>
-      <landing/>
+      <landing v-if="!studentOnboard"/>
+      <Students v-if="studentOnboard"/>
 
     </video-background>
 
@@ -55,19 +56,27 @@
 <script>
 import VideoBackground from "vue-responsive-video-background-player";
 import Landing from "../components/Landing";
+import Students from "../components/Students";
 
 export default {
   name: "Home",
 
   components: {
     Landing,
+    Students,
     VideoBackground,
   },
   data: () => ({
     poster: require("@/assets/vid-thumb.png"),
     video: require("@/assets/world-small.mp4"),
+    studentOnboard: true,
+    educatorOnboard: false,
   }),
   mounted() {
+    window.onpopstate = function () {
+      this.studentOnboard = false
+      this.educatorOnboard = false
+    };
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;

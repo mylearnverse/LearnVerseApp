@@ -5,13 +5,24 @@
         <v-card>
           <v-card-text>
             <v-img class="mx-12 my-4" :src="logo"></v-img>
-            <h3 class="text-center">Connect NEAR Wallet</h3>
-            <v-btn
-              class="mb-2 mt-2"
-              color="accent"
-              @click="connectWallet({ requestSignIn: true })"
+            <div v-if="!connected">
+              <h3 class="text-center">Connect NEAR Wallet</h3>
+              <v-btn
+                  class="mb-2 mt-2"
+                  color="accent"
+                  @click="connectWallet({ requestSignIn: true })"
               >Connect
-            </v-btn>
+              </v-btn>
+            </div>
+            <div v-else>
+              Wallet already connected:
+              <v-btn
+                  class="mb-2 mt-2"
+                  color="accent"
+                  @click="onwards"
+              >Continue
+              </v-btn>
+            </div>
           </v-card-text>
         </v-card>
       </v-col>
@@ -27,12 +38,16 @@ export default {
   data: () => ({
     connected: false,
     logo: require("@/assets/logo-square.png"),
+    wallet: {}
   }),
 
+  mounted() {
+    this.nearConnect()
+  },
+
   methods: {
-    async connectWallet() {
-      console.log("start connect wallet");
-      const { connect, keyStores, WalletConnection } = nearAPI;
+    async nearConnect() {
+      const {connect, keyStores, WalletConnection} = nearAPI;
 
       const config = {
         networkId: "testnet",
@@ -45,20 +60,29 @@ export default {
 
       // connect to NEAR
       const near = await connect(config);
-
       // create wallet connection
-      const wallet = new WalletConnection(near);
-
+      this.wallet = new WalletConnection(near);
+      console.log('check wallet')
+      if (this.wallet.isSignedIn()) {
+        this.connected = true
+        console.log('connected')
+      }
+    },
+    async connectWallet() {
+      console.log("start connect wallet");
       const signIn = () => {
-        wallet.requestSignIn(
-          "learnverse.testnet", // contract requesting access
-          "LearnVerse", // optional
-          "https://mylearnverse.com/signin/", // optional
-          "https://learnverse.space/#/wallet" // optional
+        this.wallet.requestSignIn(
+            "learnverse.testnet", // contract requesting access
+            "LearnVerse", // optional
+            "https://mylearnverse.com/signin/", // optional
+            "https://learnverse.space/#/wallet" // optional
         );
       };
       signIn();
     },
+    onwards() {
+      window.location.href = "https://learnverse.space";
+    }
   },
 };
 </script>
