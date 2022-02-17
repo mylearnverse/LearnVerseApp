@@ -7,10 +7,10 @@ const vuetify = new Vuetify({
   theme: {
     themes: {
       light: {
-        accent: '#337ab7',
+        accent: "#337ab7",
       },
     },
   },
-})
+});
 
-export default vuetify
+export default vuetify;

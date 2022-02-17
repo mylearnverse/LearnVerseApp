@@ -1,15 +1,17 @@
 <template>
   <v-container>
-    <v-row
-        class="mb-6 mt-12 pt-6"
-        no-gutters
-    >
+    <v-row class="mb-6 mt-12 pt-6" no-gutters>
       <v-col class="col-md-4 offset-md-4">
         <v-card>
           <v-card-text>
             <v-img class="mx-12 my-4" :src="logo"></v-img>
             <h3 class="text-center">Connect NEAR Wallet</h3>
-            <v-btn class="mb-2 mt-2" outlined color="accent" @click="connectWallet({ requestSignIn: true })">Connect
+            <v-btn
+              class="mb-2 mt-2"
+              outlined
+              color="accent"
+              @click="connectWallet({ requestSignIn: true })"
+              >Connect
             </v-btn>
           </v-card-text>
         </v-card>
@@ -25,13 +27,13 @@ export default {
   name: "Wallet",
   data: () => ({
     connected: false,
-    logo: require('@/assets/logo-square.png')
+    logo: require("@/assets/logo-square.png"),
   }),
 
   methods: {
     async connectWallet() {
-      console.log('start connect wallet')
-      const {connect, keyStores, WalletConnection} = nearAPI;
+      console.log("start connect wallet");
+      const { connect, keyStores, WalletConnection } = nearAPI;
 
       const config = {
         networkId: "testnet",
@@ -50,13 +52,13 @@ export default {
 
       const signIn = () => {
         wallet.requestSignIn(
-            "learnverse.testnet", // contract requesting access
-            "LearnVerse", // optional
-            "https://mylearnverse.com/signin/", // optional
-            "https://learnverse.space/#/wallet" // optional
+          "learnverse.testnet", // contract requesting access
+          "LearnVerse", // optional
+          "https://mylearnverse.com/signin/", // optional
+          "https://learnverse.space/#/wallet" // optional
         );
       };
-      signIn()
+      signIn();
     },
   },
 };
