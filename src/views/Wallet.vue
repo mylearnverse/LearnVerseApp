@@ -10,12 +10,17 @@
               <v-btn
                   class="mb-2 mt-2"
                   color="accent"
-                  @click="connectWallet({ requestSignIn: true })"
+
               >Connect
               </v-btn>
+              <v-img src="/near.png" width="90" class="mx-auto"
+                     @click="connectWallet({ requestSignIn: true })"
+              ></v-img>
+
             </div>
             <div v-else>
-              Wallet already connected:
+              NEAR wallet connected.
+              <br>
               <v-btn
                   class="mb-2 mt-2"
                   color="accent"
@@ -82,7 +87,7 @@ export default {
       signIn();
     },
     onwards() {
-      window.location.href = "https://learnverse.space";
+      window.location.href = "https://mylearnverse.com/signin";
     }
   },
 };
