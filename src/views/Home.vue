@@ -241,15 +241,16 @@ span.copyright {
 
 /*Time to animate*/
 .x1 {
-  -webkit-animation: moveclouds 15s linear infinite;
-  -moz-animation: moveclouds 15s linear infinite;
-  -o-animation: moveclouds 15s linear infinite;
+  top: -50px;
+  -webkit-animation: moveclouds 35s linear infinite;
+  -moz-animation: moveclouds 35s linear infinite;
+  -o-animation: moveclouds 35s linear infinite;
 }
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
 .x2 {
   left: 200px;
-
+  top: 100px;
   -webkit-transform: scale(0.6);
   -moz-transform: scale(0.6);
   transform: scale(0.6);
@@ -257,23 +258,23 @@ span.copyright {
 
   /*Speed will also be proportional to the size and opacity*/
   /*More the speed. Less the time in 's' = seconds*/
-  -webkit-animation: moveclouds 25s linear infinite;
-  -moz-animation: moveclouds 25s linear infinite;
-  -o-animation: moveclouds 25s linear infinite;
+  -webkit-animation: moveclouds 45s linear infinite;
+  -moz-animation: moveclouds 45s linear infinite;
+  -o-animation: moveclouds 45s linear infinite;
 }
 
 .x3 {
   left: -250px;
-  top: -200px;
+  top: -40px;
 
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   transform: scale(0.8);
   opacity: 0.8; /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -webkit-animation: moveclouds 40s linear infinite;
+  -moz-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
 }
 
 .x4 {
@@ -285,23 +286,23 @@ span.copyright {
   transform: scale(0.75);
   opacity: 0.75; /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 18s linear infinite;
-  -moz-animation: moveclouds 18s linear infinite;
-  -o-animation: moveclouds 18s linear infinite;
+  -webkit-animation: moveclouds 38s linear infinite;
+  -moz-animation: moveclouds 38s linear infinite;
+  -o-animation: moveclouds 38s linear infinite;
 }
 
 .x5 {
   left: -150px;
-  top: -150px;
+  top: 20px;
 
   -webkit-transform: scale(0.8);
   -moz-transform: scale(0.8);
   transform: scale(0.8);
   opacity: 0.8; /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -webkit-animation: moveclouds 40s linear infinite;
+  -moz-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
 }
 
 @-webkit-keyframes moveclouds {
