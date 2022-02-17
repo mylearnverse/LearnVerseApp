@@ -1,29 +1,29 @@
 <template>
   <div>
-    <div id="clouds">
-      <div class="cloud x1">
-        <v-img src="/cloud1.png"></v-img>
-      </div>
-      <div class="cloud x2">
-        <v-img src="/cloud2.png"></v-img>
-      </div>
-      <div class="cloud x3">
-        <v-img src="/cloud3.png"></v-img>
-      </div>
-      <div class="cloud x4">
-        <v-img src="/cloud4.png"></v-img>
-      </div>
-      <div class="cloud x5">
-        <v-img src="/cloud1.png"></v-img>
-      </div>
-    </div>
+    <canvas id="canvas"></canvas>
     <video-background
       :src="video"
       :poster="poster"
       style="max-height: 840px; height: 100vh"
       class="pt-6"
     >
-      <canvas id="canvas"></canvas>
+      <div id="clouds">
+        <div class="cloud x1">
+          <v-img src="/cloud1.png"></v-img>
+        </div>
+        <div class="cloud x2">
+          <v-img src="/cloud2.png"></v-img>
+        </div>
+        <div class="cloud x3">
+          <v-img src="/cloud3.png"></v-img>
+        </div>
+        <div class="cloud x4">
+          <v-img src="/cloud4.png"></v-img>
+        </div>
+        <div class="cloud x5">
+          <v-img src="/cloud1.png"></v-img>
+        </div>
+      </div>
       <landing />
     </video-background>
 
@@ -180,6 +180,7 @@ body,
 
 canvas#canvas {
   position: absolute;
+  z-index: 2;
   height: 100%;
   width: 100%;
   display: block;
@@ -189,6 +190,7 @@ canvas#canvas {
 
 footer.v-footer.lvfooter {
   position: absolute;
+  z-index: 3;
   width: 100%;
   bottom: 0;
 }
