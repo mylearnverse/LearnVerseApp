@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <router-view />
+    <router-view/>
   </v-app>
 </template>
 
@@ -12,6 +12,7 @@
   text-align: center;
   color: #2c3e50;
 }
+
 
 #nav {
   padding: 30px;

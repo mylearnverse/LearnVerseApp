@@ -6,8 +6,8 @@
     <video-background
         :src="video"
         :poster="poster"
-        style="max-height: 840px; height: 100vh"
-        class="pt-6"
+        objectFit="cover"
+        style="max-height: 100%; height: 100vh"
     >
       <div id="clouds">
         <div class="cloud x1">
@@ -188,7 +188,10 @@ body,
 
 .welcome-card {
   z-index: 2;
+}
 
+.video-buffering {
+    background-size: contain !important;
 }
 
 canvas#canvas {
