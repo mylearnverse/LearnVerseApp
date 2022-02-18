@@ -26,14 +26,6 @@
             >
               Students
             </v-btn>
-             <v-btn
-              class="mb-2 mt-2 ml-2"
-              color="accent"
-              :loading="eloading"
-              @click="eredirect"
-            >
-              Educators
-            </v-btn>
             <p v-if="sloading|| eloading">
               One moment... preparing your LearnVerse instance.
             </p>

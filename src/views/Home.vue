@@ -69,7 +69,7 @@ export default {
   data: () => ({
     poster: require("@/assets/vid-thumb.png"),
     video: require("@/assets/world-small.mp4"),
-    studentOnboard: true,
+    studentOnboard: false,
     educatorOnboard: false,
   }),
   mounted() {
@@ -191,7 +191,11 @@ body,
 }
 
 .video-buffering {
-    background-size: contain !important;
+  background-size: contain !important;
+}
+
+.vue-responsive-videobg .videobg-content {
+  background: rgba(0, 171, 255, 0.2);
 }
 
 canvas#canvas {
@@ -240,6 +244,7 @@ span.copyright {
   z-index: 1;
   opacity: 0.7;
   cursor: url(/balloon1.png), auto;
+  width: 100%;
 }
 
 .cloud {
