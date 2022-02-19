@@ -1,6 +1,6 @@
 <template>
   <v-app id="app">
-    <router-view/>
+    <router-view />
   </v-app>
 </template>
 
@@ -13,6 +13,9 @@
   color: #2c3e50;
 }
 
+.v-sheet.v-card:not(.v-sheet--outlined) {
+  box-shadow: 1px 1px 10px #777;
+}
 
 #nav {
   padding: 30px;

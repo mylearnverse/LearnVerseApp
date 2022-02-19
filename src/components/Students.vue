@@ -14,8 +14,9 @@
               education.
             </h4>
             <p>
-              We're developing innovative <strong>Learn-to-Earn</strong> business models to
-              incentivize both educators & students to improve student outcomes.
+              We're developing innovative
+              <strong>Learn-to-Earn</strong> business models to incentivize both
+              educators & students to improve student outcomes.
             </p>
 
             <v-btn
@@ -26,7 +27,7 @@
             >
               Students
             </v-btn>
-            <p v-if="sloading|| eloading">
+            <p v-if="sloading || eloading">
               One moment... preparing your LearnVerse instance.
             </p>
           </v-card-text>
@@ -47,7 +48,7 @@ export default {
     logo: require("@/assets/logo-square.png"),
   }),
   methods: {
-     sredirect() {
+    sredirect() {
       this.sloading = true;
       window.location.href = "https://mylearnverse.com/link";
     },

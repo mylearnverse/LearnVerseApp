@@ -5,45 +5,43 @@
         <v-card class="welcome-card">
           <v-card-text>
             <v-img
-                class="mx-12 mt-4 mx-auto"
-                :src="logo"
-                style="max-width: 210px"
+              class="mx-12 mb-1 mx-auto"
+              :src="logo"
+              style="max-width: 250px"
             ></v-img>
-            <v-chip>
-              Beta
-            </v-chip>
+            <v-chip> Beta </v-chip>
             <h4 class="text-center mb-2 mt-4">
               Welcome to LearnVerse a metaverse designed specifically for
               education.
             </h4>
             <p>
-              We're developing innovative <strong>Learn-to-Earn</strong> business models to
-              incentivize both educators & students to improve learning outcomes.
+              We're developing innovative
+              <strong>Learn-to-Earn</strong> business models to incentivize both
+              educators & students to improve learning outcomes.
             </p>
 
             <v-btn
-                class="mb-2 mt-2"
-                color="accent"
-                :disabled="eloading"
-                :loading="sloading"
-                @click="sredirect"
+              class="mb-2 mt-2"
+              color="accent"
+              :disabled="eloading"
+              :loading="sloading"
+              @click="sredirect"
             >
               Students
             </v-btn>
             <v-btn
-                class="mb-2 mt-2 ml-2"
-                color="accent"
-                :disabled="sloading"
-                :loading="eloading"
-                @click="eredirect"
+              class="mb-2 mt-2 ml-2"
+              color="accent"
+              :disabled="sloading"
+              :loading="eloading"
+              @click="eredirect"
             >
               Educators
             </v-btn>
-            <p v-if="sloading|| eloading">
+            <p v-if="sloading || eloading">
               One moment... preparing your LearnVerse instance.
               <small>This can take around 20 seconds for new users.</small>
             </p>
-
           </v-card-text>
         </v-card>
       </v-col>

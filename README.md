@@ -1,4 +1,20 @@
-# learnverse
+# LearnVerse
+
+
+###Token Info:
+
+####In APP Token (testnet)
+Symbol: $LTEC (LearnToEarn Coins)
+
+Name: LearnVerse LearnToEarn Coin
+
+Spec: NEAR Fungible Token (NEP-141/ft-1.0.0) 
+
+https://explorer.testnet.near.org/transactions/7PK2ZQpXMMrccGCXX1oLSRoiP5iaEsSnrck1LhzkWeUT
+
+
+
+
 
 ## Project setup
 ```

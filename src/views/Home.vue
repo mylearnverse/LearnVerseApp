@@ -1,13 +1,12 @@
 <template>
   <div>
-    <div class="bg">
-    </div>
+    <div class="bg"></div>
     <canvas id="canvas"></canvas>
     <video-background
-        :src="video"
-        :poster="poster"
-        objectFit="cover"
-        style="max-height: 100%; height: 100vh"
+      :src="video"
+      :poster="poster"
+      objectFit="cover"
+      style="max-height: 100%; height: 100vh"
     >
       <div id="clouds">
         <div class="cloud x1">
@@ -26,30 +25,10 @@
           <v-img src="/cloud1.png"></v-img>
         </div>
       </div>
-      <landing v-if="!studentOnboard"/>
-      <Students v-if="studentOnboard"/>
-
+      <landing v-if="!studentOnboard" />
+      <Students v-if="studentOnboard" />
     </video-background>
-
-    <v-footer color="accent" padless class="lvfooter">
-      <v-row justify="center" no-gutters>
-        <v-btn color="white" text rounded class="my-2">
-          <span class="hidden-sm-and-down mr-1">For </span> Students
-        </v-btn>
-        <v-btn color="white" text rounded class="my-2">
-          <span class="hidden-sm-and-down mr-1">For </span> Educators
-        </v-btn>
-        <v-btn color="white" text rounded class="my-2">
-          <span class="hidden-sm-and-down mr-1">For Content </span> Creators
-        </v-btn>
-        <v-btn color="white" text rounded class="my-2 hidden-sm-and-down">
-          Whitelabel
-        </v-btn>
-      </v-row>
-      <span class="copyright hidden-sm-and-down">
-        {{ new Date().getFullYear() }} <strong>LearnVerse</strong>
-      </span>
-    </v-footer>
+    <Footer />
   </div>
 </template>
 
@@ -57,6 +36,7 @@
 import VideoBackground from "vue-responsive-video-background-player";
 import Landing from "../components/Landing";
 import Students from "../components/Students";
+import Footer from "../components/Footer";
 
 export default {
   name: "Home",
@@ -65,6 +45,7 @@ export default {
     Landing,
     Students,
     VideoBackground,
+    Footer,
   },
   data: () => ({
     poster: require("@/assets/vid-thumb.png"),
@@ -74,8 +55,8 @@ export default {
   }),
   mounted() {
     window.onpopstate = function () {
-      this.studentOnboard = false
-      this.educatorOnboard = false
+      this.studentOnboard = false;
+      this.educatorOnboard = false;
     };
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
@@ -190,10 +171,6 @@ body,
   z-index: 2;
 }
 
-.video-buffering {
-  background-size: contain !important;
-}
-
 .vue-responsive-videobg .videobg-content {
   background: rgba(0, 171, 255, 0.2);
 }
@@ -229,13 +206,13 @@ span.copyright {
 .bg {
   opacity: 0.7;
   height: 100%;
-  background: url(/cloud-left.png) 0 0 no-repeat fixed, url(/cloud-right.png) 0 0 no-repeat fixed;
+  background: url(/cloud-left.png) 0 0 no-repeat fixed,
+    url(/cloud-right.png) 0 0 no-repeat fixed;
   background-size: 500px 900px, 370px 907px;
   background-position: 0 0, 100% 0;
   position: absolute;
   z-index: 1;
   width: 100%;
-
 }
 
 #clouds {
