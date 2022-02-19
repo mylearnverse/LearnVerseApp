@@ -1,9 +1,9 @@
 # LearnVerse
 
 
-###Token Info:
+### Token Info:
 
-####In APP Token (testnet)
+#### In-App Token (testnet)
 Symbol: $LTEC (LearnToEarn Coins)
 
 Name: LearnVerse LearnToEarn Coin
