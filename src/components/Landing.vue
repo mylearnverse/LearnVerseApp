@@ -11,7 +11,7 @@
             ></v-img>
             <v-chip> Beta </v-chip>
             <h4 class="text-center mb-2 mt-4">
-              Welcome to LearnVerse a metaverse designed specifically for
+              Welcome to LearnVerse, a metaverse designed specifically for
               education.
             </h4>
             <p>

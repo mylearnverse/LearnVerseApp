@@ -35,7 +35,13 @@
               <span>$LTEC Balance:</span>
               <h1>{{ balance }}</h1>
               <v-btn class="mb-2" color="accent" @click="transfer"
-                >Transfer
+                >Withdraw
+              </v-btn>
+              <v-btn class="mb-2 mx-4" color="accent" @click="transfer"
+                >Transfer/Gift
+              </v-btn>
+              <v-btn class="mb-2" color="accent" @click="transfer"
+                >Buys things
               </v-btn>
             </div>
             <v-divider class="mb-8 mt-2"></v-divider>
@@ -122,7 +128,7 @@ export default {
     Footer,
   },
   data: () => ({
-    connected: false,
+    connected: true,
     showDemoData: true,
     logo: require("@/assets/logo-square.png"),
     wallet: {},
