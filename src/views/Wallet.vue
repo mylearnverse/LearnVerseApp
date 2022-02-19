@@ -184,9 +184,10 @@ export default {
         this.connected = true;
         this.nearAccount = this.wallet.getAccountId();
         console.log("connected");
-        const account = await near.account(this.nearAccount);
-        this.balance = await account.getAccountBalance();
-        console.log(this.balance);
+        console.log("change to sub account")
+        // const account = await near.account(this.nearAccount);
+        // this.balance = await account.getAccountBalance().available;
+        // console.log(this.balance);
       }
       if (this.connected) {
         this.logo = require("@/assets/logo-hor.png");
