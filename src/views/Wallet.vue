@@ -5,17 +5,17 @@
         <v-col v-if="connected" class="col-md-8 offset-md-2">
           <v-sheet>
             <v-row>
-              <v-col cols="6">
+              <v-col cols="3">
                 <a href="/">
                   <v-img :src="logo" width="200" class="ml-3"></v-img>
                 </a>
               </v-col>
-              <v-col cols="2" class="mt-1">
+              <v-col cols="4" class="mt-1">
                 <p class="mt-1 text-right">NEAR wallet:</p>
               </v-col>
-              <v-col cols="2" class="mb-0 pb-0 mt-1">
+              <v-col cols="3" class="mb-0 pb-0 mt-1">
                 <v-chip
-                  class="text-center flex d-inline-block mx-auto"
+                  class="text-center flex d-inline-block mx-auto text-truncate"
                   style="width: 100%"
                   >{{ nearAccount }}
                 </v-chip>
@@ -32,12 +32,24 @@
             </v-row>
             <v-divider></v-divider>
             <div class="mx-auto mt-6 pb-3">
-              <p>$LTEC Balance: {{ balance }}</p>
+              <span>$LTEC Balance:</span>
+              <h1>{{ balance }}</h1>
+              <v-btn class="mb-2" color="accent" @click="transfer"
+              >Transfer
+            </v-btn>
             </div>
+            <v-divider class="mb-8 mt-2"></v-divider>
             <div class="px-6">
               <v-card>
                 <v-card-title>Rewards</v-card-title>
-                <v-card-text> </v-card-text>
+                <v-card-text>
+                  <v-data-table
+                    :headers="headers"
+                    :items="rewards"
+                    :hide-default-footer="true"
+                    class="elevation-1"
+                  ></v-data-table>
+                </v-card-text>
               </v-card>
               <br />
               <v-card>
@@ -76,7 +88,7 @@
               <div>
                 <v-img :src="logo" width="250" class="mx-auto"></v-img>
                 <h3 class="text-center">Connect NEAR Wallet</h3>
-                <small>(Test Net)</small><br />
+                <small>(Testnet)</small><br />
                 <v-btn
                   class="mb-2 mt-2"
                   color="accent"
@@ -115,8 +127,33 @@ export default {
     nearAccount: "",
     balance: 0,
     certificates: [
-      { id: 1213, name: "first", url: "url" },
-      { id: 1213, name: "first", url: "url" },
+      { id: 1213, name: "Test NFT", url: "url" },
+      { id: 1214, name: "First Course", url: "url" },
+    ],
+    headers: [
+      {
+        text: "Date Awarded",
+        align: "start",
+        sortable: false,
+        value: "date",
+      },
+      { text: "Type", value: "type" },
+      { text: "Date Claimed", value: "claimed" },
+      { text: "Amount", value: "amount" },
+    ],
+    rewards: [
+      {
+        date: "12-12-23",
+        type: "test",
+        claimed: "12-12-23",
+        amount: "56",
+      },
+      {
+        date: "12-12-23",
+        type: "test",
+        claimed: "12-12-23",
+        amount: "56",
+      },
     ],
   }),
 
@@ -148,7 +185,7 @@ export default {
         this.nearAccount = this.wallet.getAccountId();
         console.log("connected");
         const account = await near.account(this.nearAccount);
-        this.balance = account.getAccountBalance();
+        this.balance = await account.getAccountBalance();
         console.log(this.balance);
       }
       if (this.connected) {
@@ -168,6 +205,9 @@ export default {
       console.log("signout");
       this.wallet.signOut();
       this.connected = false;
+    },
+    transfer(){
+      window.location.href = "https://wallet.testnet.near.org/"
     },
     onwards() {
       window.location.href = "https://learnverse.space";
