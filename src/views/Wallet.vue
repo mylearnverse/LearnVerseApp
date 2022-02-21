@@ -128,7 +128,7 @@ export default {
     Footer,
   },
   data: () => ({
-    connected: true,
+    connected: false,
     showDemoData: true,
     logo: require("@/assets/logo-square.png"),
     wallet: {},
