@@ -325,4 +325,10 @@ span.copyright {
     margin-left: -1000px;
   }
 }
+
+.v-btn a {
+  color: #fff !important;
+  text-decoration: none;
+}
+
 </style>

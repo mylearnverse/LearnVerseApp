@@ -1,5 +1,5 @@
 <template>
-  <v-footer color="accent" padless class="lvfooter">
+  <v-footer color="accent" padless class="lvfooter mt-6">
     <v-row justify="center" no-gutters>
       <v-btn color="white" text rounded class="my-2">
         <span class="hidden-sm-and-down mr-1">For </span> Students
@@ -19,3 +19,8 @@
     </span>
   </v-footer>
 </template>
+<style>
+footer.v-footer.lvfooter.mt-6.v-sheet.theme--light.v-footer--padless.accent {
+  border-radius: 0;
+}
+</style>

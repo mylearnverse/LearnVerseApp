@@ -32,8 +32,18 @@
             </v-row>
             <v-divider></v-divider>
             <div class="mx-auto mt-6 pb-3">
-              <span>$LTEC Balance:</span>
-              <h1>{{ balance }}</h1>
+              <h4>$LTEC Balance:</h4>
+              <v-progress-circular
+                :rotate="360"
+                :size="100"
+                :width="15"
+                value="100"
+                color="accent"
+                class="mb-5 mt-3"
+              >
+                <h2>{{ balance }}</h2>
+              </v-progress-circular>
+<br>
               <v-btn class="mb-2" color="accent" @click="transfer"
                 >Withdraw
               </v-btn>
@@ -41,7 +51,7 @@
                 >Transfer/Gift
               </v-btn>
               <v-btn class="mb-2" color="accent" @click="transfer"
-                >Buys things
+                >Buy things
               </v-btn>
             </div>
             <v-divider class="mb-8 mt-2"></v-divider>
@@ -129,7 +139,7 @@ export default {
   },
   data: () => ({
     connected: false,
-    showDemoData: true,
+    showDemoData: false,
     logo: require("@/assets/logo-square.png"),
     wallet: {},
     nearAccount: "",
@@ -152,6 +162,7 @@ export default {
 
   mounted() {
     this.nearConnect();
+
   },
 
   methods: {
@@ -166,6 +177,7 @@ export default {
           console.log(error);
         });
       if (this.showDemoData) {
+        this.balance = 23
         console.log("show demo data");
         this.certificates = [
           { id: 1213, name: "Test NFT", url: "url" },
