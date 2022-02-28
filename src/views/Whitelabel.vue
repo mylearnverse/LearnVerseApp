@@ -16,17 +16,19 @@
             </v-col>
           </v-row>
 
-          <h1>About</h1>
+          <h1>Whitelabel</h1>
           <p>
-            LearnVerse is a
-            <a href="https://www.learncube.com">LearnCube</a> Labs project.
+            Create your own branded version of LearnVerse, use your own logo and
+            colors.
           </p>
           <p>
-            We've helped over 50,000 educators transition to live online
-            classes, we provide the infrastructure and software to schools and
-            tutors to deliver over 20 million minutes of live classes every
-            month in 94+ countries.
+            Create a competitive advantage, get to market quick and future proof
+            your education business.
           </p>
+
+          <v-btn class="text-white mx-2" color="success"
+            ><a href="/#/beta">Join Beta</a></v-btn
+          >
         </v-sheet>
       </v-col>
     </v-row>
@@ -37,7 +39,7 @@
 import Footer from "../components/Footer";
 
 export default {
-  name: "About",
+  name: "Whitelabel",
   components: {
     Footer,
   },
@@ -57,14 +59,5 @@ footer.v-footer.lvfooter {
 
 .demos {
   min-height: 100vh;
-}
-
-.demos .v-image {
-  border-radius: 5px;
-}
-
-.demos .v-btn a {
-  color: #fff;
-  text-decoration: none;
 }
 </style>

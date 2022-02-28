@@ -43,7 +43,7 @@
               >
                 <h2>{{ balance }}</h2>
               </v-progress-circular>
-<br>
+              <br />
               <v-btn class="mb-2" color="accent" @click="transfer"
                 >Withdraw
               </v-btn>
@@ -162,7 +162,6 @@ export default {
 
   mounted() {
     this.nearConnect();
-
   },
 
   methods: {
@@ -177,7 +176,7 @@ export default {
           console.log(error);
         });
       if (this.showDemoData) {
-        this.balance = 23
+        this.balance = 23;
         console.log("show demo data");
         this.certificates = [
           { id: 1213, name: "Test NFT", url: "url" },
